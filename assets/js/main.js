@@ -11,34 +11,22 @@ function berechne(){
     if (steuer1 && steuer19) {
         mwstBerechnen = inputAsNum * 0.19;
         bruttoErgebnis = mwstBerechnen + inputAsNum;
-        nettoErgebnis = 0,00;
-        document.querySelector(".mehrwertSteuerBetrag").innerHTML = mwstBerechnen.toFixed(2);
-        document.querySelector(".bruttoBetrag").innerHTML = bruttoErgebnis.toFixed(2);
-        document.querySelector(".nettoBetrag").innerHTML = nettoErgebnis.toFixed(2);
-
+        nettoErgebnis = 0;
     }  else if (steuer1 && steuer7) {
         mwstBerechnen = inputAsNum * 0.7;
         bruttoErgebnis = mwstBerechnen + inputAsNum;
-        nettoErgebnis = 0,00;
-        document.querySelector(".mehrwertSteuerBetrag").innerHTML = mwstBerechnen.toFixed(2);
-        document.querySelector(".bruttoBetrag").innerHTML = bruttoErgebnis.toFixed(2);
-        document.querySelector(".nettoBetrag").innerHTML = nettoErgebnis.toFixed(2);
-
+        nettoErgebnis = 0;
     } else if (steuer2 && steuer19) {
-        mwstBerechnen= inputAsNum / 1.19;
-        nettoErgebnis= inputAsNum - mwstBerechnen;
-        bruttoErgebnis = 0,00;
-        document.querySelector(".mehrwertSteuerBetrag").innerHTML = nettoErgebnis.toFixed(2);
-        document.querySelector(".bruttoBetrag").innerHTML = bruttoErgebnis.toFixed(2);
-        document.querySelector(".nettoBetrag").innerHTML =  mwstBerechnen.toFixed(2);
-
+        nettoErgebnis = inputAsNum / 1.19;
+        mwstBerechnen = inputAsNum - nettoErgebnis;
+        bruttoErgebnis = 0;
     }  else if (steuer2 && steuer7) {
-        mwstBerechnen = inputAsNum / 1.07;
-        nettoErgebnis = inputAsNum - mwstBerechnen;
-        bruttoErgebnis = 0,00;
-        document.querySelector(".mehrwertSteuerBetrag").innerHTML = nettoErgebnis.toFixed(2);
-        document.querySelector(".bruttoBetrag").innerHTML = bruttoErgebnis.toFixed(2);
-        document.querySelector(".nettoBetrag").innerHTML =  mwstBerechnen.toFixed(2);
+        nettoErgebnis = inputAsNum / 1.07;
+        mwstBerechnen = inputAsNum - nettoErgebnis;
+        bruttoErgebnis = 0;
     } 
+    document.querySelector(".mehrwertSteuerBetrag").innerHTML = mwstBerechnen.toFixed(2);
+    document.querySelector(".bruttoBetrag").innerHTML = bruttoErgebnis.toFixed(2);
+    document.querySelector(".nettoBetrag").innerHTML =   nettoErgebnis.toFixed(2);
 }
     
